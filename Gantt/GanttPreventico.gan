@@ -42,11 +42,11 @@
                 <depend id="14" type="2" difference="0" hardness="Strong"/>
                 <depend id="15" type="2" difference="0" hardness="Strong"/>
             </task>
-            <task id="13" name="analisi costi e benefici" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
             <task id="14" name="analisi del dominio" color="#8cb6ce" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
             <task id="15" name="analisi dei requisiti" color="#8cb6ce" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true">
                 <depend id="76" type="2" difference="-5" hardness="Rubber"/>
             </task>
+            <task id="13" name="analisi costi e benefici" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
             <task id="76" name="docuento di specifica" color="#8cb6ce" meeting="false" start="2017-11-17" duration="1" complete="0" expand="true"/>
         </task>
         <task id="20" name="Progettazione" meeting="false" start="2017-11-17" duration="4" complete="0" expand="true">
