@@ -1,0 +1,5 @@
+Our school needs a project to exhibit to Espoprofessioni so they commissioned to us the realization of a web page that translates a message to morse code,
+the coded string is sent to an arduino that will pour water in a tube, a water drop will mean a dot and a longer stream of water will mean a line, the water
+will be read by a second arduino and the message formed by the water will be translated back to the original message, the final result will be displayed on an LCD display.
+Our solution will use an html page that has an input tag that collects the original message, the message will be coded using javascript, we will be using php to write the message on a csv file,
+we will be using two arduino boards, one to send the message with water and one to translate the message back.
