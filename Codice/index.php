@@ -16,7 +16,7 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body oncontextmenu="return false;">
 
   <div class="container">
     <header class="header clearfix">
