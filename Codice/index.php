@@ -40,7 +40,7 @@
         <form class="form" action="dataBackup.php" method="post">
 
           <div class="form-group">
-            <textarea maxlength="255" onkeyup="controlInputTextarea()" class="form-control" name="inputTextarea" value="<?php if(isset($_POST['inputTextarea'])) echo $_POST['inputTextarea']; ?>" rows="3" placeholder="Inserisci il testo qui" required></textarea>
+            <textarea maxlength="100" onkeyup="controlInputTextarea()" class="form-control" name="inputTextarea" value="<?php if(isset($_POST['inputTextarea'])) echo $_POST['inputTextarea']; ?>" rows="3" placeholder="Inserisci il testo qui" required></textarea>
           </div>
 
           <br>
