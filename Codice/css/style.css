@@ -95,3 +95,11 @@ p.output{
   font-size: 23px;
   font-weight: bold;
 }
+
+td{
+  word-wrap: break-word;
+}
+
+table{
+  table-layout: fixed;
+}
