@@ -69,8 +69,8 @@
             //Stampo i valori di ogni riga in una tabella
             while($row = $result->fetch_assoc()) {
               echo "<tr>
-              <td>".htmlspecialchars($row["encoded"])."</td>
               <td>".htmlspecialchars($row["decoded"])."</td>
+              <td>".htmlspecialchars($row["encoded"])."</td>
               </tr>";
             }
           }

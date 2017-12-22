@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
   //Aggiungo i valori
   $sql = "INSERT INTO code (encoded, decoded)
-  VALUES ('$input', '$result')";
+  VALUES ('$result', '$input')";
 
   //Stampo il risultato dell'aggiunta dei valori
   if ($conn->query($sql) === TRUE) {
@@ -56,6 +56,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   //Chiudo la connessione
   $conn->close();
+
+
+
+//Prova dei socket
+  $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+
+    $msg = "Ping !";
+    $len = strlen($msg);
+
+    socket_sendto($sock, $msg, $len, 0, '200.200.200.2', 23);
+    socket_close($sock);
+
+
 
   //Richiamo la pagina index.php
   header("Location: index.php");
