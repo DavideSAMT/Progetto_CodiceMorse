@@ -68,6 +68,7 @@
             <task id="122" name="Stampa su display il risultato finale" color="#8cb6ce" meeting="false" start="2018-01-12" duration="1" complete="0" expand="true"/>
             <task id="181" name="Montare struttura" meeting="false" start="2018-01-12" duration="2" complete="0" expand="true"/>
         </task>
+        <task id="185" name="Documentazione" meeting="false" start="2017-11-24" duration="9" complete="0" expand="true"/>
         <task id="88" name="Test" meeting="false" start="2017-11-24" duration="8" complete="0" expand="true">
             <task id="147" name="Test performance" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
             <task id="148" name="Test controllo dati" color="#8cb6ce" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
