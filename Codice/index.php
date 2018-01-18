@@ -49,7 +49,7 @@
 
           <br>
 
-          <button name="checkButton" type="submit" class="btn btn-lg btn-success" disabled>Invio</button>
+          <button name="checkButton" type="submit" class="btn btn-lg btn-success" disabled >Invio</button>
         </form>
       </div>
 
