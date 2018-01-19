@@ -37,7 +37,7 @@
 
       <div class="jumbotron">
         <h1 class="display-3">Traduci il tuo testo...</h1>
-        <form class="form" action="dataBackup.php" method="post">
+        <form class="form" action="dataBackup.php" method="post" onsubmit="disabledButton()">
 
           <div class="form-group">
             <textarea maxlength="100" onkeyup="controlInputTextarea()" class="form-control" name="inputTextarea" value="<?php if(isset($_POST['inputTextarea'])) echo $_POST['inputTextarea']; ?>" rows="3" placeholder="Inserisci il testo qui" required></textarea>

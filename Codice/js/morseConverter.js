@@ -80,3 +80,8 @@ document.onkeydown = function (event) {
     return false;
   }
 }
+
+//Funzione che disabilita il bottone di invio dopo il submit.
+function disabledButton(){
+    document.getElementsByName("checkButton")[0].disabled = true;
+}

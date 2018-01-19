@@ -1,7 +1,7 @@
   <?php
   //Controllo se é stato eseguito il POST
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+	
     //Creo matrice di array
     $morse = array
     (
@@ -50,7 +50,7 @@
 
     //Stampo il risultato dell'aggiunta dei valori
     if ($conn->query($sql) === TRUE) {
-      //echo "New record created successfully";
+      echo "New record created successfully";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -64,17 +64,15 @@
     $arduino_port = 8888;
     $mess = "";
     $message = $result;
-
+	
     if ($socket = socket_create ( AF_INET , SOCK_DGRAM , SOL_UDP )) {
-
-      $percent;
       for ($i=0; $i < strlen($message); $i++) {
         socket_sendto($socket, $message[$i], 1, 0, $arduino_ip, $arduino_port);
         sleep(1);
       }
 
     } else {
-      print("can't create socketn");
+      print("can't create socketn ");
     }
 
     ///////////////////////////////////////////////////////////////////////////////
