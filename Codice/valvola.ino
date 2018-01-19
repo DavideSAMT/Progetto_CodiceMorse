@@ -17,7 +17,7 @@ unsigned int localPort = 8888;      // local port to listen on
 char packetBuffer[UDP_TX_PACKET_MAX_SIZE];  //buffer to hold incoming packet,
 char  ReplyBuffer[] = "acknowledged";       // a string to send back
 
-
+String result = "";
 
 // An EthernetUDP instance to let us send and receive packets over UDP
 EthernetUDP Udp;
@@ -49,21 +49,20 @@ void loop() {
 
     // read the packet into packetBufffer
     Udp.read(packetBuffer, UDP_TX_PACKET_MAX_SIZE);
-    Serial.println(UDP_TX_PACKET_MAX_SIZE);
-    Serial.println(packetBuffer);
+    /*Serial.println(UDP_TX_PACKET_MAX_SIZE);
+    Serial.println(packetBuffer);*/
     String code = packetBuffer;
-    String result = "";    
+        
     
     //Converto morse in 0 e 1
     for(int i = 0; i < code.length(); i++){
       if(code.charAt(i) == '.'){
-        result += "1";
+        Serial.println("APRI POCO - chiudi");
       }else if(code.charAt(i) == '-'){
-        result += "0";
+        Serial.println("APRI MOLTO - chiudi");
       }
     }
-        
-    Serial.println(result);
+    
     //Resetto buffer
     for(int i = 0; i < UDP_TX_PACKET_MAX_SIZE; i++) packetBuffer[i] = 0;
     // send a reply to the IP address and port that sent us the packet we received
@@ -74,5 +73,3 @@ void loop() {
   }
   delay(10);
 }
-
-
