@@ -29,6 +29,7 @@
       }
     }
 
+    
     ////////////////////////////////////////////////////////////////////////////////
 
     //Connessione al db mysql
@@ -36,7 +37,7 @@
     $username = "root";
     $password = "";
     $dbname = "morsecode";
-    $port = 3307;
+    $port = 3306;
 
     // Creo la connessione
     $conn = new mysqli($servername, $username, $password, $dbname, $port);
@@ -60,38 +61,41 @@
 
     ///////////////////////////////////////////////////////////////////////////////
 
+    $result .= "E";
+
     $arduino_ip   = '200.200.200.2';
     $arduino_port = 8888;
     $mess = "";
     $message = str_replace('#','',$result);
-	$timeSleep;
+    //$timeSleep;
+
 	
     if ($socket = socket_create ( AF_INET , SOCK_DGRAM , SOL_UDP )) {
       for ($i=0; $i < strlen($message); $i++) {
 
-		switch($message[$i]){
-			case '/':
-				$timeSleep = 3500000;
-				break;
-			case '-':
-				$timeSleep = 1500000;
-				break;
-			default:
-				$timeSleep = 500000;
-		}
+      /*
+		  switch($message[$i]){
+			  case '/':
+				  $timeSleep = 3500000;
+				  break;
+			  case '-':
+				  $timeSleep = 1500000;
+				  break;
+			  default:
+				  $timeSleep = 500000;*/
 		
-		socket_sendto($socket, $message[$i], 1, 0, $arduino_ip, $arduino_port);
-        
-		usleep($timeSleep);
+        socket_sendto($socket, $message[$i], 1, 0, $arduino_ip, $arduino_port);
       }
+        
+      sleep(1);
+		// usleep($timeSleep);
 
     } else {
-		print("can't create socketn ");
+      print("can't create socketn ");
     }
 
     ///////////////////////////////////////////////////////////////////////////////
 
 header("Location: index.php");
-
   }
   ?>

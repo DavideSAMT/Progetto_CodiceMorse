@@ -52,7 +52,7 @@
           $username = "root";
           $password = "";
           $dbname = "morsecode";
-          $port = 3307;
+          $port = 3306;
 
           // Creo la connessione
           $conn = new mysqli($servername, $username, $password, $dbname, $port);

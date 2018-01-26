@@ -57,12 +57,15 @@ void loop() {
     //Converto morse in 0 e 1
     for(int i = 0; i < code.length(); i++){
       if(code.charAt(i) == '.'){
-        Serial.println("APRI POCO - chiudi");
+        result += code.charAt(i);
       }else if(code.charAt(i) == '-'){
-        Serial.println("APRI MOLTO - chiudi");
+        result += code.charAt(i);
+      }else if(code.charAt(i) == 'E'){
+        Serial.println("FINE");
+        result = "";
       }
     }
-    
+    Serial.println(result);
     //Resetto buffer
     for(int i = 0; i < UDP_TX_PACKET_MAX_SIZE; i++) packetBuffer[i] = 0;
     // send a reply to the IP address and port that sent us the packet we received
