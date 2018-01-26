@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="GanttUfficiale" company="" webLink="http://" view-date="2017-11-04" view-index="0" gantt-divider-location="681" resource-divider-location="300" version="2.8.5" locale="it">
+    <description/>
+    <view zooming-state="default:0" id="gantt-chart">
+        <field id="tpd3" name="Nome" width="382" order="0"/>
+        <field id="tpd4" name="Data d'inizio" width="153" order="1"/>
+        <field id="tpd5" name="Data di fine" width="142" order="2"/>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Nome" width="210" order="0"/>
+        <field id="1" name="Ruolo predefinito" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="1" tue="1" wed="1" thu="1" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="0" name="Analisi" meeting="false" start="2017-11-10" duration="3" complete="0" expand="true">
+            <task id="9" name="intervista cliente" meeting="false" start="2017-11-10" duration="1" complete="0" expand="true">
+                <depend id="8" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="8" name="risoluzione dei dubbi" color="#8cb6ce" meeting="false" start="2017-11-17" duration="1" complete="0" expand="true">
+                <depend id="13" type="2" difference="0" hardness="Strong"/>
+                <depend id="14" type="2" difference="0" hardness="Strong"/>
+                <depend id="15" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="14" name="analisi del dominio" color="#8cb6ce" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
+            <task id="15" name="analisi dei requisiti" color="#8cb6ce" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true">
+                <depend id="76" type="2" difference="-5" hardness="Rubber"/>
+            </task>
+            <task id="13" name="analisi costi e benefici" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
+            <task id="76" name="docuento di specifica" color="#8cb6ce" meeting="false" start="2017-11-17" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="20" name="Progettazione" meeting="false" start="2017-11-17" duration="4" complete="0" expand="true">
+            <task id="89" name="Gantt" color="#8cb6ce" meeting="false" start="2017-11-17" duration="1" complete="0" expand="true">
+                <depend id="90" type="2" difference="-5" hardness="Rubber"/>
+            </task>
+            <task id="90" name="Design pagina web" color="#8cb6ce" meeting="false" start="2017-11-17" duration="1" complete="0" expand="true"/>
+            <task id="160" name="Design struttura" meeting="false" start="2017-11-24" duration="3" complete="0" expand="true"/>
+            <task id="184" name="Design XML" meeting="false" start="2017-12-08" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="80" name="Implementazione" meeting="false" start="2017-11-24" duration="9" complete="0" expand="true">
+            <task id="105" name="Creazione pagina web" color="#8cb6ce" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
+            <task id="108" name="Controllo dati" color="#8cb6ce" meeting="false" start="2017-11-24" duration="5" complete="0" expand="true"/>
+            <task id="106" name="Codifica in Morse" meeting="false" start="2017-12-15" duration="1" complete="0" expand="true"/>
+            <task id="107" name="Salvataggio nel file XML" color="#8cb6ce" meeting="false" start="2017-12-15" duration="1" complete="0" expand="true"/>
+            <task id="109" name="Ricezione e trasmissione dati (primo Arduino)" color="#8cb6ce" meeting="false" start="2017-12-15" duration="2" complete="0" expand="true"/>
+            <task id="110" name="Lettura gocce tramite sensore" color="#8cb6ce" meeting="false" start="2017-12-15" duration="2" complete="0" expand="true"/>
+            <task id="120" name="Ricezione e decodifica dati (secondo Arduino)" color="#8cb6ce" meeting="false" start="2017-12-22" duration="4" complete="0" expand="true"/>
+            <task id="122" name="Stampa su display il risultato finale" color="#8cb6ce" meeting="false" start="2018-01-12" duration="1" complete="0" expand="true"/>
+            <task id="181" name="Montare struttura" meeting="false" start="2018-01-12" duration="2" complete="0" expand="true"/>
+        </task>
+        <task id="185" name="Documentazione" meeting="false" start="2017-11-24" duration="9" complete="0" expand="true"/>
+        <task id="88" name="Test" meeting="false" start="2017-11-24" duration="8" complete="0" expand="true">
+            <task id="147" name="Test performance" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
+            <task id="148" name="Test controllo dati" color="#8cb6ce" meeting="false" start="2017-11-24" duration="1" complete="0" expand="true"/>
+            <task id="177" name="Test codifica in Morse" meeting="false" start="2017-12-15" duration="1" complete="0" expand="true"/>
+            <task id="149" name="Test salvataggio dati" color="#8cb6ce" meeting="false" start="2017-12-15" duration="1" complete="0" expand="true"/>
+            <task id="167" name="Test ricezione dati (primo Arduino)" meeting="false" start="2017-12-22" duration="1" complete="0" expand="true"/>
+            <task id="168" name="Test lettura goccie tramite sensore" meeting="false" start="2017-12-22" duration="1" complete="0" expand="true"/>
+            <task id="169" name="Test ricezione dati (secondo Arduino)" meeting="false" start="2018-01-12" duration="1" complete="0" expand="true"/>
+            <task id="170" name="Test decodifica dati (secondo Arduino)" meeting="false" start="2018-01-12" duration="1" complete="0" expand="true"/>
+            <task id="171" name="Test stampa su display" meeting="false" start="2018-01-12" duration="1" complete="0" expand="true"/>
+        </task>
+        <task id="140" name="Consegna" color="#8cb6ce" meeting="true" start="2018-01-19" duration="0" complete="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+</project>
