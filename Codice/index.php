@@ -15,7 +15,7 @@
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="jquery/jquery-3.3.1.min.js"></script>
 
 </head>
 
@@ -115,7 +115,7 @@
     });
   });
   </script>
-  <script src="js/morse_converter.js"></script>
+  <script src="js/disable.js"></script>
 
 </body>
 </html>

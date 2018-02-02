@@ -75,7 +75,7 @@
         socket_sendto($socket, $message[$i], 1, 0, $arduino_ip, $arduino_port);
       }
         
-    sleep(1);
+    //sleep(1);
 		// usleep($timeSleep);
 
 
