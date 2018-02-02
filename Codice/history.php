@@ -47,20 +47,9 @@
         </thead>
         <tbody id="print">
           <?php
-          //Connessione con il db mysql
-          $servername = "localhost";
-          $username = "root";
-          $password = "";
-          $dbname = "morsecode";
-          $port = 3306;
 
-          // Creo la connessione
-          $conn = new mysqli($servername, $username, $password, $dbname, $port);
-          // Controllo la connessione
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
-
+          require_once('db_connection.php');
+          
           //Prendo i valori dal db
           $sql = "SELECT encoded, decoded FROM code ORDER BY id DESC";
           $result = $conn->query($sql);

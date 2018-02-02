@@ -33,11 +33,11 @@
       <h3 class="text-muted">Codice Morse</h3>
     </header>
 
-    <main role="main">
 
+    <main role="main">
       <div class="jumbotron">
         <h1 class="display-3">Traduci il tuo testo...</h1>
-        <form class="form" action="dataBackup.php" method="post" onsubmit="disabledButton()">
+        <form class="form" action="data_backup.php" method="post" onsubmit="disabledButton()">
 
           <div class="form-group">
             <textarea maxlength="100" onkeyup="controlInputTextarea()" class="form-control" name="inputTextarea" value="<?php if(isset($_POST['inputTextarea'])) echo $_POST['inputTextarea']; ?>" rows="3" placeholder="Inserisci il testo qui" required></textarea>
