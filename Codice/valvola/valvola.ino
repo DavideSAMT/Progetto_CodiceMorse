@@ -53,7 +53,7 @@ void loop() {
     Serial.println(packetBuffer);*/
     String code = packetBuffer;
         
-    
+    //Introdurre 
     //Converto morse in 0 e 1
     for(int i = 0; i < code.length(); i++){
       if(code.charAt(i) == '.'){

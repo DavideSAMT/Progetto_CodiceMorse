@@ -1,4 +1,4 @@
-//Reegex deve contenere almeno una lettera o un numero
+/*//Reegex deve contenere almeno una lettera o un numero
 var spaceRegex = /[a-z]+|[0-9]+/g;
 
 //Creazione di array bidimensionale con lettere alfabetiche e morse
@@ -46,7 +46,7 @@ function inputToMorseConverter(input) {
 
   //Stampo il risultato nel paragrafo
   document.getElementsByName("outputText")[0].innerHTML = result;
-}
+}*/
 
 
 /*

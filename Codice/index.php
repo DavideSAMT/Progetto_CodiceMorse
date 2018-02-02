@@ -14,6 +14,9 @@
 
   <!-- Custom styles for this template -->
   <link href="css/style.css" rel="stylesheet">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
 </head>
 
 <body oncontextmenu="return false;">
@@ -37,10 +40,10 @@
     <main role="main">
       <div class="jumbotron">
         <h1 class="display-3">Traduci il tuo testo...</h1>
-        <form class="form" action="data_backup.php" method="post" onsubmit="disabledButton()">
+        <form class="form" action="data_backup.php" method="post">
 
           <div class="form-group">
-            <textarea maxlength="100" onkeyup="controlInputTextarea()" class="form-control" name="inputTextarea" value="<?php if(isset($_POST['inputTextarea'])) echo $_POST['inputTextarea']; ?>" rows="3" placeholder="Inserisci il testo qui" required></textarea>
+            <textarea maxlength="100" class="form-control" id="inputTextarea" name="inputTextarea" value="<?php if(isset($_POST['inputTextarea'])) echo $_POST['inputTextarea']; ?>" rows="3" placeholder="Inserisci il testo qui" required></textarea>
           </div>
 
           <br>
@@ -71,8 +74,48 @@
     <footer class="footer">
       <p>&copy; CPT 2017</p>
     </footer>
-
+  
   </div> <!-- /container -->
-  <script src="js/morseConverter.js"></script>
+
+<script>
+    $(document).ready(function(){
+      $('[name="inputTextarea"]').keyup(function() {
+        //var regex = new RegExp(/[a-z]+|[0-9]+/g);
+        //Creazione di array bidimensionale con lettere alfabetiche e morse
+        var morse = new Array();
+        morse[0] = new Array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','0',' ');
+        morse[1] = new Array(".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..",".----","..---","...--","....-",".....","-....","--...","---..","----.","-----", "/");
+        var input = $('[name="inputTextarea"]').val();
+        if (!input.match(/[a-z]+|[0-9]+/g)) {
+          $('[name="checkButton"]').prop("disabled",true);
+          $('[name="outputText"]').text("");
+        }else{
+          $('[name="checkButton"]').prop("disabled",false);
+          var result="";
+          for (var i = 0; i < input.length; i++) {
+            var special = true;
+            for (var x = 0; x < morse[0].length; x++) {
+            //Controllo se il carattere é presente nell'array alfabetico
+              if (input[i].toUpperCase()==morse[0][x]) {
+              //Aggiungo alla variabile il corrispettivo morse del carattere
+                result+=morse[1][x]+" ";
+                special = false;
+              }
+            }
+          if(special){
+          result+="#";
+          }
+        }
+        $('[name="outputText"]').text(result);
+      }
+    });
+    //Blocco il tasto invio
+    $('form').submit(function() {
+      $('[name="checkButton"]').prop("disabled",true);
+    });
+  });
+  </script>
+  <script src="js/morse_converter.js"></script>
+
 </body>
 </html>
