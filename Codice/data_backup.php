@@ -55,35 +55,33 @@
     $arduino_port = 8888;
     $mess = "";
     $message = str_replace('#','',$result);
+    $message = str_replace(' ','*',$message);
     //$timeSleep;
 
 	
     if ($socket = socket_create ( AF_INET , SOCK_DGRAM , SOL_UDP )) {
       for ($i=0; $i < strlen($message); $i++) {
 
-      /*
-		  switch($message[$i]){
-			  case '/':
-				  $timeSleep = 3500000;
-				  break;
-			  case '-':
-				  $timeSleep = 1500000;
-				  break;
-			  default:
-				  $timeSleep = 500000;*/
-		
+      
+		    // switch($message[$i]){
+      //     case '/':
+				  //   $timeSleep = 3500000;
+				  //   break;
+			   // case '-':
+				  //   $timeSleep = 1500000;
+				  //   break;
+			   // default:
+				  //   $timeSleep = 500000;
+		    //     break;
+      //    }           
         socket_sendto($socket, $message[$i], 1, 0, $arduino_ip, $arduino_port);
-      }
-        
-    //sleep(1);
-		// usleep($timeSleep);
+        echo "<br>".$message[$i];
 
-
-
-    } else {
+      usleep(10000);//($timeSleep);
+      }        
+    }else{
       print("can't create socketn ");
     }
-    
     ///////////////////////////////////////////////////////////////////////////////
 
     header("Location: index.php");
