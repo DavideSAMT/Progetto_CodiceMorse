@@ -12,8 +12,5 @@
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-    
-
-    //Chiudo la connessione
-    //$conn->close();
 ?>
+

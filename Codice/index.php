@@ -43,7 +43,10 @@
         <form class="form" action="data_backup.php" method="post">
 
           <div class="form-group">
-            <textarea maxlength="100" class="form-control" id="inputTextarea" name="inputTextarea" value="<?php if(isset($_POST['inputTextarea'])) echo $_POST['inputTextarea']; ?>" rows="3" placeholder="Inserisci il testo qui" required></textarea>
+            <textarea maxlength="100" class="form-control" id="inputTextarea" name="inputTextarea"
+			value="<?php if(isset($_POST['inputTextarea'])) echo $_POST['inputTextarea']; ?>"
+			rows="3" placeholder="Inserisci il testo qui" required>
+			</textarea>
           </div>
 
           <br>

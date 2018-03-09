@@ -62,19 +62,6 @@
     if ($socket = socket_create ( AF_INET , SOCK_DGRAM , SOL_UDP )) {
       for ($i=0; $i < strlen($message); $i++) {
 
-      
-		    // switch($message[$i]){
-      //     case '/':
-				  //   $timeSleep = 3500000;
-				  //   break;
-			   // case '-':
-				  //   $timeSleep = 1500000;
-				  //   break;
-			   // default:
-				  //   $timeSleep = 500000;
-		    //     break;
-      //    }           
-        //echo $message[$i];
         socket_sendto($socket, $message[$i], 1, 0, $arduino_ip, $arduino_port);
         echo "<br>".$message[$i];
 

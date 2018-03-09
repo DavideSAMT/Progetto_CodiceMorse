@@ -62,7 +62,6 @@ void loop() {
       }
       startStop();
       code = "";
-      for(int i = 0; i < UDP_TX_PACKET_MAX_SIZE; i++) packetBuffer[i] = 0;
     }   
 
   }
