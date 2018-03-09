@@ -1,15 +1,15 @@
 #include <SPI.h>
-#include <Ethernet.h>
-#include <EthernetUdp.h>
+#include <Ethernet2.h>
+#include <EthernetUdp2.h>
 
 
-byte mac[] = {0xDE, 0x90, 0xA2, 0xDA, 0x10, 0x95}; //MAC dell'Arduino ethenet
-IPAddress ip(200, 200, 200, 2); //IP dell'Arduino ethenet
+byte mac[] = {0x90, 0xA2, 0xDA, 0x10, 0xE2, 0x45}; //MAC dell'Arduino ethenet
+IPAddress ip(192, 168, 20, 2); //IP dell'Arduino ethenet
 unsigned int localPort = 8888; //Porta in ascolto dell'Arduino ethenet
 char packetBuffer[UDP_TX_PACKET_MAX_SIZE];// Lunghezza massima del Buffered
 String code = ""; //Stringa code che conterrà il
 const int mosfetPin = 7;
-const int pausa = 300;
+const int pausa = 300; 
 
 EthernetUDP Udp;
 
@@ -24,14 +24,15 @@ void setup() {
 void loop() {
   
   int packetSize = Udp.parsePacket();
+  Serial.println(packetSize);
   
   if (packetSize) {
-
+  
     // read the packet into packetBufffer
     Udp.read(packetBuffer, UDP_TX_PACKET_MAX_SIZE);
 
 
-    //Serial.println(packetBuffer);
+    Serial.println(packetBuffer);
     code += packetBuffer;
     
     //Resetto buffer

@@ -51,7 +51,7 @@
 
     $result .= "E";
 
-    $arduino_ip   = '200.200.200.2';
+    $arduino_ip   = '192.168.20.2';
     $arduino_port = 8888;
     $mess = "";
     $message = str_replace('#','',$result);
@@ -74,6 +74,7 @@
 				  //   $timeSleep = 500000;
 		    //     break;
       //    }           
+        //echo $message[$i];
         socket_sendto($socket, $message[$i], 1, 0, $arduino_ip, $arduino_port);
         echo "<br>".$message[$i];
 
